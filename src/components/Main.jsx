@@ -67,6 +67,7 @@ const Main = () => {
                                 isActive={active === element.id}
                             />
                         )
+                        // Cards don't need onToggle like buttons. They will display based on the value taken from the buttons
                     })}
                 </div>
             </div>
