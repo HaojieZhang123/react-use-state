@@ -47,7 +47,11 @@ const Main = () => {
             </div>
 
             <div className="card-container">
-                card container
+                {languages.map((element) => {
+                    return (
+                        <Card key={element.id} obj={element} />
+                    )
+                })}
             </div>
         </>
     )

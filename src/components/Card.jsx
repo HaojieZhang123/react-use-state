@@ -3,7 +3,12 @@
 const Card = (props) => {
     return (
         <>
-            <div className="card">Placeholder</div>
+            <div className="card">
+                <h2>{props.obj.title}</h2>
+                <div className="description">
+                    {props.obj.description}
+                </div>
+            </div>
         </>
     )
 }
