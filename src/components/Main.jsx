@@ -1,5 +1,6 @@
 import Button from './Button'
 import Card from './Card'
+import { useState } from 'react'
 
 const Main = () => {
 
@@ -36,12 +37,21 @@ const Main = () => {
         }
     ];
 
+    const [active, setActive] = useState(null);
+
     return (
         <>
             <div className="buttons-container">
                 {languages.map((element) => {
                     return (
-                        <Button key={element.id} title={element.title} />
+                        <Button
+                            key={`button-${element.id}`}
+                            title={element.title}
+                            isActive={active === element.id}
+                            onToggle={() => {
+                                setActive(element.id)
+                            }}
+                        />
                     )
                 })}
             </div>
@@ -49,7 +59,11 @@ const Main = () => {
             <div className="card-container">
                 {languages.map((element) => {
                     return (
-                        <Card key={element.id} obj={element} />
+                        <Card
+                            key={`card-${element.id}`}
+                            obj={element}
+                            isActive={active === element.id}
+                        />
                     )
                 })}
             </div>

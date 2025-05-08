@@ -2,7 +2,7 @@
 const Button = (props) => {
     return (
         <>
-            <button>{props.title}</button>
+            <button className={props.isActive ? 'active' : ''} onClick={props.onToggle}>{props.title}</button>
         </>
     )
 }
