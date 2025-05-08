@@ -51,7 +51,7 @@ const Main = () => {
                                 title={element.title}
                                 isActive={active === element.id}
                                 onToggle={() => {
-                                    setActive(element.id)
+                                    setActive(active === element.id ? null : element.id)
                                 }}
                             />
                         )
@@ -69,6 +69,13 @@ const Main = () => {
                         )
                         // Cards don't need onToggle like buttons. They will display based on the value taken from the buttons
                     })}
+
+                    {/* If active state is null, no card will be displayed, an error message will be displayed instead */}
+                    {active === null &&
+                        <div className="card-active">
+                            nessun linguaggio selezionato
+                        </div>
+                    }
                 </div>
             </div>
         </>
