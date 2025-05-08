@@ -41,31 +41,34 @@ const Main = () => {
 
     return (
         <>
-            <div className="buttons-container">
-                {languages.map((element) => {
-                    return (
-                        <Button
-                            key={`button-${element.id}`}
-                            title={element.title}
-                            isActive={active === element.id}
-                            onToggle={() => {
-                                setActive(element.id)
-                            }}
-                        />
-                    )
-                })}
-            </div>
+            <div className="container">
 
-            <div className="card-container">
-                {languages.map((element) => {
-                    return (
-                        <Card
-                            key={`card-${element.id}`}
-                            obj={element}
-                            isActive={active === element.id}
-                        />
-                    )
-                })}
+                <div className="buttons-container">
+                    {languages.map((element) => {
+                        return (
+                            <Button
+                                key={`button-${element.id}`}
+                                title={element.title}
+                                isActive={active === element.id}
+                                onToggle={() => {
+                                    setActive(element.id)
+                                }}
+                            />
+                        )
+                    })}
+                </div>
+
+                <div className="card-container">
+                    {languages.map((element) => {
+                        return (
+                            <Card
+                                key={`card-${element.id}`}
+                                obj={element}
+                                isActive={active === element.id}
+                            />
+                        )
+                    })}
+                </div>
             </div>
         </>
     )

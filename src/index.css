@@ -2,4 +2,39 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+/* HEADER */
+header {
+  background-color: #F8F9FA;
+  font-size: 25px;
+  padding: 20px 10px
+}
+
+/* MAIN */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.buttons-container {
+  padding: 40px 0;
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+button {
+  padding: 10px 15px;
+  font-size: 20px;
+  color: #FFF;
+  background-color: #0D6EFD;
+  border-radius: 10px;
+  border: transparent;
+}
+
+button.active {
+  color: #000;
+  background-color: #FFC107;
 }
